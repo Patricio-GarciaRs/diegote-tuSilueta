@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '@fontsource/smooch';
+import '@fontsource-variable/source-code-pro';
+import { Image } from 'astro:assets';
+import profilePic from '../../public/profilePic.jpeg'
+---
+
+<Layout title="Diegote - Tu silueta">
+	<main>
+		<section>
+			<div class="relative flex items-center justify-center h-screen overflow-hidden"> 
+				<video src="playa.mp4"
+					autoplay loop muted 
+					class="absolute z-10 w-auto min-w-full min-h-full max-w-none brightness-50"> 
+				</video> 
+				<div class="z-10 grid md:grid-cols-1 justify-center items-center text-center md:justify-start md:text-start w-dvw md:m-12">
+					<div class="">
+						<!-- <div class="">
+							<Image
+								src={profilePic}
+								width={300}
+								height={300}
+								alt="profile Pic"
+								class="rounded-full"
+							/>
+						</div> -->
+						<h1 class="text-[#e7b463] text-7xl lg:text-8xl md:text-7xl leading-tight mb-2 tracking-widest">Tu Silueta</h1>
+						<h2 class="text-white text-4xl font-extralight tracking-wider">Diegote</h2>
+						<div class="mt-8 flex flex-col md:flex-row items-center justify-center md:justify-start">
+							<a href="https://open.spotify.com/intl-es/artist/2V9MnjEMqwXm7sice07NQK">
+								<button type="button" class="text-white hover:before:bg-redborder-red-500 relative text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 w-[13rem] md:w-[15rem] overflow-hidden bg-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-500 hover:text-black hover:before:left-0 hover:before:w-full rounded-lg">
+									<span class="text-center inline-flex items-center z-10">
+										<svg width="40px" height="40px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+											<title>Spotify-color</title>
+											<desc>Created with Sketch.</desc>
+											<defs>
+											</defs>
+											<g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<g id="Color-" transform="translate(-200.000000, -460.000000)" fill="#00DA5A">
+													<path d="M238.16,481.36 C230.48,476.8 217.64,476.32 210.32,478.6 C209.12,478.96 207.92,478.24 207.56,477.16 C207.2,475.96 207.92,474.76 209,474.4 C217.52,471.88 231.56,472.36 240.44,477.64 C241.52,478.24 241.88,479.68 241.28,480.76 C240.68,481.6 239.24,481.96 238.16,481.36 M237.92,488.08 C237.32,488.92 236.24,489.28 235.4,488.68 C228.92,484.72 219.08,483.52 211.52,485.92 C210.56,486.16 209.48,485.68 209.24,484.72 C209,483.76 209.48,482.68 210.44,482.44 C219.2,479.8 230,481.12 237.44,485.68 C238.16,486.04 238.52,487.24 237.92,488.08 M235.04,494.68 C234.56,495.4 233.72,495.64 233,495.16 C227.36,491.68 220.28,490.96 211.88,492.88 C211.04,493.12 210.32,492.52 210.08,491.8 C209.84,490.96 210.44,490.24 211.16,490 C220.28,487.96 228.2,488.8 234.44,492.64 C235.28,493 235.4,493.96 235.04,494.68 M224,460 C210.8,460 200,470.8 200,484 C200,497.2 210.8,508 224,508 C237.2,508 248,497.2 248,484 C248,470.8 237.32,460 224,460" id="Spotify">
+													</path>
+												</g>
+											</g>
+										</svg>
+										<p class="ps-4 text-left">
+											<span class="text-sm font-light">Escuchala en</span><br><span class="text-lg">Spotify</span>
+										</p>
+									</span>
+								</button>
+							</a>
+							<a href="https://music.apple.com/es/artist/diegote/1716623111">							
+								<button class="text-white hover:before:bg-redborder-red-500 relative text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 w-[13rem] md:w-[15rem] overflow-hidden bg-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-500 hover:text-black hover:before:left-0 hover:before:w-full rounded-lg">
+									<span class="text-center inline-flex items-center z-10">
+										<svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" aria-label="Apple Music" role="img" viewBox="0 0 512 512">
+											<rect width="512" height="512" rx="15%" fill="url(#g)"/><linearGradient id="g" x1=".5" y1=".99" x2=".5" y2=".02"><stop offset="0" stop-color="#FA233B"/><stop offset="1" stop-color="#FB5C74"/></linearGradient><path fill="#ffffff" d="M199 359V199q0-9 10-11l138-28q11-2 12 10v122q0 15-45 20c-57 9-48 105 30 79 30-11 35-40 35-69V88s0-20-17-15l-170 35s-13 2-13 18v203q0 15-45 20c-57 9-48 105 30 79 30-11 35-40 35-69"/>
+										</svg>
+										<p class="ps-4 text-left">
+											<span class="text-sm font-light">Escuchala en</span><br><span class="text-lg">Apple Music</span>
+										</p>
+									</span>
+								</button>
+							</a>
+						</div>
+						<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/57f0ili5EzdZlEaSKcEg8p?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="w-[100%] md:w-[73%] lg:w-[34%]"></iframe>
+					</div>
+				</div>
+			</div> 
+		</section>
+	</main>
+</Layout>
+
+<style>
+	h1{
+		font-family: 'Smooch', cursive;
+	}
+	h2 {
+		font-family: 'Source Code Pro Variable', monospace;
+	}
+</style>
