@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import '@fontsource/smooch';
 import '@fontsource-variable/source-code-pro';
-import { Image } from 'astro:assets';
-import profilePic from '../../public/profilePic.jpeg'
 ---
 
 <Layout title="Diegote - Tu silueta">
@@ -11,13 +9,15 @@ import profilePic from '../../public/profilePic.jpeg'
 		<section>
 			<div class="relative flex items-center justify-center h-screen overflow-hidden"> 
 				<video 
-					autoplay="autoplay" 
+					autoplay="autoPlay" 
 					loop="loop" 
 					muted="muted" 
-					class="absolute z-10 w-auto min-w-full min-h-full max-w-none brightness-50"
+					playsinline="playsinline"
+					class="video absolute z-10 w-auto min-w-full min-h-full max-w-none brightness-50"
 				> 
 					<source src="playa.mp4">
 				</video> 
+				<canvas class="canvas" style="display: none;"></canvas>
 				<div class="z-10 grid md:grid-cols-1 justify-center items-center text-center md:justify-start md:text-start w-dvw md:m-12">
 					<div class="">
 						<h1 class="text-[#e7b463] text-7xl lg:text-8xl md:text-7xl leading-tight mb-2 tracking-widest">Tu Silueta</h1>
@@ -64,9 +64,27 @@ import profilePic from '../../public/profilePic.jpeg'
 		</section>
 	</main>
 	<script>
-		var mobilevideo = document.getElementsByTagName("video")[0];
-		mobilevideo.setAttribute("playsinline", "");
-		mobilevideo.setAttribute("muted", "");
+		let isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+		if(isIOS) {
+			var CanvasVideoPlayer: any;
+
+			new CanvasVideoPlayer({
+				videoSelector: '.video',
+				canvasSelector: '.canvas',
+				timelineSelector: false,
+				autoplay: true,
+				makeLoop: true,
+				pauseOnClick: false,
+				audio: false
+			})
+
+			console.log("usas iphone")
+		} else {
+			document.querySelectorAll('.canvas')[0].setAttribute("style", "display:none;");
+			console.log("no usas iphone")
+		}
+
 	</script>
 </Layout>
 
