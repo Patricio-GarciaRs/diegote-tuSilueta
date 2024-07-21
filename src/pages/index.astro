@@ -16,9 +16,8 @@ import profilePic from '../../public/profilePic.jpeg'
 					muted="muted" 
 					class="absolute z-10 w-auto min-w-full min-h-full max-w-none brightness-50"
 				> 
-					<source src="playa.mp4" type="video/mp4">
+					<source src="playa.mp4">
 				</video> 
-				<canvas class="canvas"></canvas> 
 				<div class="z-10 grid md:grid-cols-1 justify-center items-center text-center md:justify-start md:text-start w-dvw md:m-12">
 					<div class="">
 						<h1 class="text-[#e7b463] text-7xl lg:text-8xl md:text-7xl leading-tight mb-2 tracking-widest">Tu Silueta</h1>
@@ -64,49 +63,6 @@ import profilePic from '../../public/profilePic.jpeg'
 			</div> 
 		</section>
 	</main>
-	<script>
-		// Definición del tipo para el objeto CanvasVideoPlayer
-		interface CanvasVideoPlayerOptions {
-			videoSelector: string;
-			canvasSelector: string;
-			timelineSelector?: boolean;
-			autoplay: boolean;
-			makeLoop: boolean;
-			pauseOnClick: boolean;
-			audio: boolean;
-		}
-
-		// Clase CanvasVideoPlayer
-		class CanvasVideoPlayer {
-			constructor(options: CanvasVideoPlayerOptions) {
-				// Implementación de la clase según necesidades
-				// (Aquí puedes definir las propiedades y métodos de CanvasVideoPlayer si fuera necesario)
-			}
-		}
-
-		// Variable para detectar si el entorno es iOS
-		const isIOS: boolean = /iPad|iPhone|iPod/.test(navigator.platform);
-
-		if (isIOS) {
-			// Inicialización de CanvasVideoPlayer en dispositivos iOS
-			const canvasVideo = new CanvasVideoPlayer({
-				videoSelector: '.video',
-				canvasSelector: '.canvas',
-				timelineSelector: false,
-				autoplay: true,
-				makeLoop: true,
-				pauseOnClick: false,
-				audio: false
-			});
-		} else {
-			// Caso contrario (otros dispositivos), ocultar el canvas
-			const canvasElements = document.querySelectorAll<HTMLDivElement>('.canvas');
-			if (canvasElements.length > 0) {
-				canvasElements[0].style.display = 'none';
-			}
-		}
-
-	</script>
 </Layout>
 
 <style>
